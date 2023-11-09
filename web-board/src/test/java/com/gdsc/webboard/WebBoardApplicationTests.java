@@ -4,9 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
+import com.gdsc.webboard.answer.Answer;
+import com.gdsc.webboard.answer.AnswerRepository;
+import com.gdsc.webboard.question.Question;
+import com.gdsc.webboard.question.QuestionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
