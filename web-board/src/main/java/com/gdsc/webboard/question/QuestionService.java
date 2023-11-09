@@ -10,7 +10,6 @@ import java.util.Optional;
 import com.gdsc.webboard.DataNotFoundException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
 import org.springframework.data.domain.Sort;
 import com.gdsc.webboard.user.SiteUser;
 
