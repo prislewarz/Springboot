@@ -3,6 +3,8 @@ package com.gdsc.webboard.user;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import java.util.Optional;
+import com.gdsc.webboard.DataNotFoundException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,5 +25,14 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(password));
         this.userRepository.save(user);
         return user;
+    }
+
+    public SiteUser getUser(String username) {
+        Optional<SiteUser> siteUser = this.userRepository.findByusername(username);
+        if (siteUser.isPresent()) {
+            return siteUser.get();
+        } else {
+            throw new DataNotFoundException("siteuser not found");
+        }
     }
 }
