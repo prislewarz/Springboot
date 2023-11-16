@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import com.gdsc.webboard.question.Question;
 import jakarta.persistence.*;
 import com.gdsc.webboard.user.SiteUser;
+import java.util.Set;
+import jakarta.persistence.ManyToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -30,4 +32,7 @@ public class Answer {
     private SiteUser author;
 
     private LocalDateTime modifyDate;
+
+    @ManyToMany
+    Set<SiteUser> voter;
 }
